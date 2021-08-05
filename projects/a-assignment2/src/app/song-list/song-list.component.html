@@ -1,0 +1,26 @@
+<h2 *ngIf=showSongs>Number of songs in my playlist : {{countSong}} </h2>
+
+<button (click)="toggle()">Toggle number of Songs</button>
+<div>
+    <h3>{{title}}</h3>
+
+    <!-- <ul *ngFor="let s of songList">
+        <li>{{s}}</li>
+    </ul> -->
+    <label *ngFor="let s of songList; let i=index">
+        <input type="checkbox" name="listofSong" value="s" (click)="addSongToPlaylist($event.target.checked,s)"
+            [(ngModel)]="chooseSong[i]">
+        <label>{{s}}</label><br /><br />
+    </label>
+</div>
+<br />
+
+<button type="button" (click)="addtoPlaylist()" [disabled]="!readyToSend">Add to Playlist</button>
+<br /><br />
+
+<label>Enter new song : </label>
+<input type="text" [(ngModel)]="newsong" name="song">
+
+<button type="button" (click)="addNewSong('add')">Add Song</button>
+<hr>
+<app-my-playlist></app-my-playlist>

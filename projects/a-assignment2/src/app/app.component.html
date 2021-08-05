@@ -1,0 +1,8 @@
+<h2>{{title}}</h2>
+<hr>
+<!-- <h2 *ngIf=showSongs>Number of songs in my playlist : {{countSong}} </h2> -->
+<!-- <app-song-list (messageEvent)="receiveMessage($event)"></app-song-list> -->
+<!-- <h2>{{message}}</h2> -->
+<h2>{{songforPlaylist}}</h2>
+<app-song-list (childEvent)="recieveFromParent($event)"></app-song-list>
+<!-- <app-song-list (childEvent)="message=$event"></app-song-list> -->

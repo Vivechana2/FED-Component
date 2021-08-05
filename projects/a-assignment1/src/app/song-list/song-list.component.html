@@ -1,0 +1,16 @@
+<h2 *ngIf=showSongs>Number of songs in my playlist : {{countSong}} </h2>
+
+<button (click)="toggle()">Toggle number of Songs</button>
+<div>
+    <h3>{{title}}</h3>
+
+    <ul *ngFor="let s of songList">
+        <li>{{s}}</li>
+    </ul>
+</div>
+<br /><br />
+
+<label>Enter new song : </label>
+<input type="text" [(ngModel)]="newsong" name="song">
+
+<button type="button" (click)="addNewSong('add')">Add Song</button>
